@@ -1,10 +1,8 @@
 {
     "id": "com.markopejic.downloader",
-    "runtime": "org.kde.Platform",
-    "runtime-version": "6.8",
-    "sdk": "org.kde.Sdk",
-    "base": "io.qt.PySide.BaseApp",
-    "base-version": "6.7",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "24.08",
+    "sdk": "org.freedesktop.Sdk",
     "command": "com.markopejic.downloader",
     "finish-args": [
         "--share=network",
@@ -15,17 +13,24 @@
         "--filesystem=xdg-download:create"
     ],
     "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
-    "cleanup-commands": [
-        "/app/cleanup-BaseApp.sh"
+          "/include",
+          "/lib/debug",
+          "/lib/pkgconfig",
+          "/lib/python3.12/site-packages/PySide6/examples",
+          "/lib/python3.12/site-packages/PySide6/lupdate",
+          "/lib/python3.12/site-packages/PySide6/assistant",
+          "/lib/python3.12/site-packages/PySide6/qmllint",
+          "/lib/python3.12/site-packages/PySide6/linguist",
+          "/lib/python3.12/site-packages/PySide6/Qt/lib/libQt6WebEngineCore.so.6",
+          "/lib/python3.12/site-packages/PySide6/Qt/translations/qtwebengine_locales",
+          "/lib/python3.12/site-packages/PySide6/Qt/resources",
+          "/man",
+          "/share/doc",
+          "/share/gtk-doc",
+          "/share/man",
+          "'*.la'",
+          "'*.a'",
+          "/share/ffmpeg"
     ],
     "modules": [
         "python3-yt-dlp.json",
@@ -43,16 +48,41 @@
                 "--enable-libmp3lame",
                 "--enable-libopus",
                 "--enable-libvorbis"
-
-            ],
-            "cleanup": [
-                "/share/ffmpeg"
             ],
             "sources": [
                 {
                     "type": "archive",
                     "url": "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz",
                     "sha256": "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
+                }
+            ]
+        },
+        {
+            "name": "python3-PySide6",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} PySide6-Essentials --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/6f/ee/9023d3851054db24c28312744de8bdb80dcf8de20bd583b6520da416484f/PySide6_Essentials-6.8.0.2-cp39-abi3-manylinux_2_31_aarch64.whl",
+                    "sha256": "cf490145d18812a6cff48b0b0afb0bfaf7066744bfbd09eb071c3323f1d6d00d"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/34/72/6ef2f32e5ae5681cdd10cc7e627c453fcd389889fbc6a76d4e400a27af87/PySide6_Essentials-6.8.0.2-cp39-abi3-manylinux_2_28_x86_64.whl",
+                    "sha256": "7df6d6c1da4858dbdea77c74d7270d9c68e8d1bbe3362892abd1a5ade3815a50"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/13/cd/e9a6d0aa8794f777627a9fb3cffed0ac8449881b33e2325b5bcff10c36bc/shiboken6-6.8.0.2-cp39-abi3-manylinux_2_31_aarch64.whl",
+                    "sha256": "1aaa8b7f9138818322ef029b2c487d1c6e00dc3f53084e62e1d11bdea47e47c2"
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/42/73/6344e02a6734e17a86c5781df41293fa15245e4d7454992c1d82e77d49a9/shiboken6-6.8.0.2-cp39-abi3-manylinux_2_28_x86_64.whl",
+                    "sha256": "fa7d411c3c67b4296847b3f5f572268e219d947d029ff9d8bce72fe6982d92bc"
                 }
             ]
         },
@@ -66,7 +96,7 @@
                 "install -D src/icons/icon.png /app/icons/icon.png",
                 "install -D src/main.py /app/main.py",
                 "install -D src/flatpak/runner /app/bin/com.markopejic.downloader",
-                "pip3 install --verbose --exists-action=i --no-index --find-links='file://${PWD}' --prefix=${FLATPAK_DEST} --compile setuptools ./src --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --compile setuptools ./src --no-build-isolation"
             ],
             "sources": [
                 {
@@ -77,8 +107,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/90/12/282ee9bce8b58130cb762fbc9beabd531549952cac11fc56add11dcb7ea0/setuptools-75.3.0-py3-none-any.whl",
-                    "sha256": "f2504966861356aa38616760c0f66568e535562374995367b4e69c7143cf6bcd"
+                    "url": "https://files.pythonhosted.org/packages/21/df/7c6bb83dcb45b35dc35b310d752f254211cde0bcd2a35290ea6e2862b2a9/setuptools-75.4.0-py3-none-any.whl",
+                    "sha256": "b3c5d862f98500b06ffdf7cc4499b48c46c317d8d56cb30b5c8bce4d88f5c216"
                 }
             ]
         }

@@ -1,8 +1,10 @@
 {
     "id": "com.markopejic.downloader",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.8",
     "sdk": "org.kde.Sdk",
+    "base": "io.qt.PySide.BaseApp",
+    "base-version": "6.8",
     "command": "com.markopejic.downloader",
     "finish-args": [
         "--share=network",
@@ -13,16 +15,21 @@
         "--filesystem=xdg-download:create"
     ],
     "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
+          "/include",
+          "/lib/pkgconfig",
+          "/man",
+          "/share/doc",
+          "/share/gtk-doc",
+          "/share/man",
+          "'*.la'",
+          "'*.a'",
+          "/share/ffmpeg"
+    ],
+    "cleanup-commands": [
+        "/app/cleanup-BaseApp.sh"
     ],
     "modules": [
+        "python3-yt-dlp.json",
         {
             "name": "ffmpeg",
             "config-opts": [
@@ -38,43 +45,11 @@
                 "--enable-libopus",
                 "--enable-libvorbis"
             ],
-            "cleanup": [
-                "/share/ffmpeg"
-            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz",
-                    "sha256": "8646515b638a3ad303e23af6a3587734447cb8fc0a0c064ecdb8e95c4fd8b389"
-                }
-            ]
-        },
-        {
-            "name": "python3-PySide6",
-            "buildsystem": "simple",
-            "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PySide6-Essentials\" --no-build-isolation"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/42/e0/40994873471ab7fabbff098560a9fe0c08a2182c2eb501e31b1148e7bd44/PySide6_Essentials-6.7.2-cp39-abi3-manylinux_2_31_aarch64.whl",
-                    "sha256": "9135513e1c4c6e2fbb1e4f9afcb3d42e54708b0d9ed870cb3213ea4874cafa1e"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/75/be/527e41a7744142d931e46685dd9c2bdfff39432962abf8a5263be319c2cb/PySide6_Essentials-6.7.2-cp39-abi3-manylinux_2_28_x86_64.whl",
-                    "sha256": "a1a4c09f1e916b9cfe53151fe4a503a6acb1f6621ba28204d1bfe636f80d6780"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/7c/bb/06a19d1b00d46b3840595e43d7fa648b21683e4e98c4a69d0ea06aaf5e7f/shiboken6-6.7.2-cp39-abi3-manylinux_2_31_aarch64.whl",
-                    "sha256": "98bedf9a15f1d8ba1af3e4d1e7527f7946ce36da541e08074fd9dc9ab5ff1adf"
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/57/ba/3e38bb62b285d73e46a86f44e7765cea5c42a79b0bba867dfabbdd12b54d/shiboken6-6.7.2-cp39-abi3-manylinux_2_28_x86_64.whl",
-                    "sha256": "70e80737b27cd5d83504b373013b55e70462bd4a27217d919ff9a83958731990"
+                    "url": "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz",
+                    "sha256": "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
                 }
             ]
         },
@@ -99,11 +74,10 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/6e/ec/06715d912351edc453e37f93f3fc80dcffd5ca0e70386c87529aca296f05/setuptools-72.2.0-py3-none-any.whl",
-                    "sha256": "f11dd94b7bae3a156a95ec151f24e4637fb4fa19c878e4d191bfb8b2d82728c4"
+                    "url": "https://files.pythonhosted.org/packages/21/df/7c6bb83dcb45b35dc35b310d752f254211cde0bcd2a35290ea6e2862b2a9/setuptools-75.4.0-py3-none-any.whl",
+                    "sha256": "b3c5d862f98500b06ffdf7cc4499b48c46c317d8d56cb30b5c8bce4d88f5c216"
                 }
             ]
-        },
-        "python3-yt-dlp.json"
+        }
     ]
 }

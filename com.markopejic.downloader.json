@@ -29,6 +29,7 @@
         "/app/cleanup-BaseApp.sh"
     ],
     "modules": [
+        "python3-yt-dlp.json",
         {
             "name": "ffmpeg",
             "config-opts": [
@@ -77,7 +78,6 @@
                     "sha256": "ce74b49e8f7110f9bf04883b730f4765b774ef3ef28f722cce7c273d253aaf7d"
                 }
             ]
-        },
-        "python3-yt-dlp.json"
+        }
     ]
 }

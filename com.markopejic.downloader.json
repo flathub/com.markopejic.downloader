@@ -69,13 +69,13 @@
                 {
                     "type": "git",
                     "url": "https://github.com/markop404/media-downloader/",
-                    "tag": "v4.0.0",
+                    "tag": "v4.1.0",
                     "dest": "src"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/55/21/47d163f615df1d30c094f6c8bbb353619274edccf0327b185cc2493c2c33/setuptools-75.6.0-py3-none-any.whl",
-                    "sha256": "ce74b49e8f7110f9bf04883b730f4765b774ef3ef28f722cce7c273d253aaf7d"
+                    "url": "https://files.pythonhosted.org/packages/8b/f6/126c9309c8fe93e5d6bb850593cd58d591daf2da45cc78b61e48d8d95879/setuptools-80.1.0-py3-none-any.whl",
+                    "sha256": "ea0e7655c05b74819f82e76e11a85b31779fee7c4969e82f72bab0664e8317e4"
                 }
             ]
         }

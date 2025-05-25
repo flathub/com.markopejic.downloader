@@ -38,24 +38,26 @@
         "python3-yt-dlp.json",
         {
             "name": "ffmpeg",
-            "config-opts": [
-                "--disable-debug",
-                "--disable-doc",
-                "--disable-static",
-                "--enable-gpl",
-                "--enable-shared",
-                "--disable-ffplay",
-                "--disable-devices",
-                "--enable-gnutls",
-                "--enable-libmp3lame",
-                "--enable-libopus",
-                "--enable-libvorbis"
+            "buildsystem": "simple",
+            "build-commands": [
+                "mv bin/* /app/bin/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz",
-                    "sha256": "733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1"
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-05-23-15-29/ffmpeg-n7.1.1-20-gdf29f11136-linux64-gpl-7.1.tar.xz",
+                    "sha256": "6c0fb090a93e0d5c69eda5d07aab76e88ae25ffafa41fac2acbdcc8ed9122e29",
+                    "only-arches": [
+                        "x86_64"
+                    ]
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-05-23-15-29/ffmpeg-n7.1.1-20-g2b0ea195e1-linuxarm64-gpl-7.1.tar.xz",
+                    "sha256": "496ee96f984708e682a17b9f53f6ebfde429c74f26ad548390e9af811db2af07",
+                    "only-arches": [
+                        "aarch64"
+                    ]
                 }
             ]
         },

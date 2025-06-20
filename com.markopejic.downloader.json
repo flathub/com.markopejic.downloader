@@ -45,16 +45,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-06-05-15-16/ffmpeg-n7.1.1-21-g2ffb729e5c-linux64-gpl-7.1.tar.xz",
-                    "sha256": "0fdf94391c9e4a9c07021cbd42fd5c5f2b3c064299354ce1622e4f41f356c4a5",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-06-20-15-28/ffmpeg-n7.1.1-23-g04b54f67ea-linux64-gpl-7.1.tar.xz",
+                    "sha256": "7f562b8cc784e81ede07286b3d7d773915e25694b7548c736e83da2e7de0dbda",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-06-05-15-16/ffmpeg-n7.1.1-21-geda6320564-linuxarm64-gpl-7.1.tar.xz",
-                    "sha256": "f04fc179338a85cb19a4677b7f7306abd6df4caf8f2480df9151a2b59ebc8452",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-06-20-15-28/ffmpeg-n7.1.1-23-g0abb0bf182-linuxarm64-gpl-7.1.tar.xz",
+                    "sha256": "e5e61675b82f3177aa4c8ec8322e804f6e6ccb8396f9de5b9deed191ad2abe88",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -82,8 +82,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/8b/f6/126c9309c8fe93e5d6bb850593cd58d591daf2da45cc78b61e48d8d95879/setuptools-80.1.0-py3-none-any.whl",
-                    "sha256": "ea0e7655c05b74819f82e76e11a85b31779fee7c4969e82f72bab0664e8317e4"
+                    "url": "https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl",
+                    "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
                 }
             ]
         }

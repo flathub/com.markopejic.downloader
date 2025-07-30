@@ -45,16 +45,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-06-20-15-28/ffmpeg-n7.1.1-23-g04b54f67ea-linux64-gpl-7.1.tar.xz",
-                    "sha256": "7f562b8cc784e81ede07286b3d7d773915e25694b7548c736e83da2e7de0dbda",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-30-15-42/ffmpeg-n7.1.1-56-gc2184b65d2-linux64-gpl-7.1.tar.xz",
+                    "sha256": "66a193187fefe06553a4890c0004fc1344a948854e4e516fe7b5f404f5ca09bc",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-06-20-15-28/ffmpeg-n7.1.1-23-g0abb0bf182-linuxarm64-gpl-7.1.tar.xz",
-                    "sha256": "e5e61675b82f3177aa4c8ec8322e804f6e6ccb8396f9de5b9deed191ad2abe88",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-07-30-15-42/ffmpeg-n7.1.1-56-gc2184b65d2-linuxarm64-gpl-7.1.tar.xz",
+                    "sha256": "c66da75724ec96251c2ce61be941187bcb34f57baec4272fcaab4101254f09a8",
                     "only-arches": [
                         "aarch64"
                     ]

@@ -39,7 +39,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-09-07-14-18/ffmpeg-N-121008-gf4b044bbe3-linux64-gpl.tar.xz",
-                    "sha256": "723aa24911638b7023f50bf8f1703226d7eb7dfbfe603182179c671bbb2f51e5",
+                    "sha256": "a77135fe7aeefa49bea03865b160c83c766b2878764af31e016f0e963f346d20",
                     "only-arches": [
                         "x86_64"
                     ]
@@ -47,7 +47,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2025-09-07-14-18/ffmpeg-N-121008-gf4b044bbe3-linuxarm64-gpl.tar.xz",
-                    "sha256": "28b6aee1bbe5ee4c9c366ce983b4e29c00b3996944370c688fe6cb9c522c7c5c",
+                    "sha256": "4914b6ffaaa55706ca9822e0f4614addc9521f480734ba530c4268a9394f6f84",
                     "only-arches": [
                         "aarch64"
                     ]

@@ -55,6 +55,31 @@
             ]
         },
         {
+            "name": "deno",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mv * $FLATPAK_DEST/bin/"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.5.6/deno-x86_64-unknown-linux-gnu.zip",
+                    "sha256": "fd4f6abc1b6a134fa9a4dba56519f1631f44c88e04e4e3e9a8ff5975dfa66e1a",
+                    "only-arches": [
+                        "x86_64"
+                    ]
+                },
+                {
+                    "type": "archive",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.5.6/deno-aarch64-unknown-linux-gnu.zip",
+                    "sha256": "f5e60ae3dfceb61e5e5a41f22129e40a8bc17f6393b59e75d7ca19ceef32d824",
+                    "only-arches": [
+                        "aarch64"
+                    ]
+                }
+            ]
+        },
+        {
             "name": "com.markopejic.downloader",
             "buildsystem": "simple",
             "build-commands": [

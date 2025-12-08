@@ -86,6 +86,7 @@
                 "install -D flatpak/com.markopejic.downloader.desktop $FLATPAK_DEST/share/applications/com.markopejic.downloader.desktop",
                 "install -D flatpak/com.markopejic.downloader.metainfo.xml $FLATPAK_DEST/share/metainfo/com.markopejic.downloader.metainfo.xml",
                 "install -D icons/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.markopejic.downloader.svg",
+                "install -D icons/icon.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/com.markopejic.downloader.png",
                 "install -D main.py $FLATPAK_DEST/bin/media-downloader",
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --compile . --no-build-isolation"
             ],

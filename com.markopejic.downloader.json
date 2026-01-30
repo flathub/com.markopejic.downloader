@@ -38,16 +38,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-11-14-17/ffmpeg-N-122414-g24213d5db3-linux64-gpl.tar.xz",
-                    "sha256": "09fc34bd94058116a5159bca0bfbb65637e423770d78e0ab17c854781a46b206",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-30-14-42/ffmpeg-N-122604-gde3f99d74b-linux64-gpl.tar.xz",
+                    "sha256": "8d3d79d3a5463ca1121b764797eef4c3b86b8306327a91e93aaf4867a61b3664",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-11-14-17/ffmpeg-N-122414-g24213d5db3-linuxarm64-gpl.tar.xz",
-                    "sha256": "d9f92554b0afd2a8b0de3f719da95be238feb22479a2b541806a0ee2248fde07",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-01-30-14-42/ffmpeg-N-122604-gde3f99d74b-linuxarm64-gpl.tar.xz",
+                    "sha256": "8be0a65cff0d9c3a8bcbf5e314a44594f6d1eb6f26cd02bdf57c8a6cba5d4209",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -63,16 +63,16 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.6.4/deno-x86_64-unknown-linux-gnu.zip",
-                    "sha256": "9100bbd0450c17b82002d3948bb8e7e1953c9e6506e63b586e2daa4042eca7f6",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.6.7/deno-x86_64-unknown-linux-gnu.zip",
+                    "sha256": "c5626c9ee10e87201706fc5e64ed5a44b31527d98c130f164e149e1477c0a87d",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.6.4/deno-aarch64-unknown-linux-gnu.zip",
-                    "sha256": "dafb54c5454d7fcca81305215442e832e0c34e90b76a2e9a31d0676cbb06bfc6",
+                    "url": "https://github.com/denoland/deno/releases/download/v2.6.7/deno-aarch64-unknown-linux-gnu.zip",
+                    "sha256": "d2aedfa8c73e258cce78dc80e8d0e764a69d4a09d946d32f0c29eef46592b82f",
                     "only-arches": [
                         "aarch64"
                     ]

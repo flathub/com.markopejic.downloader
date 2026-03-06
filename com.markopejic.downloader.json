@@ -14,16 +14,16 @@
         "--device=dri",
         "--filesystem=xdg-download"
     ],
-    "cleanup" : [
-        "/share/bash-completion",
-        "/share/doc",
-        "/share/fish",
-        "/share/man",
-        "/share/zsh"
-    ],
     "cleanup-commands": [
         "/app/cleanup-BaseApp.sh",
-        "python3 -m compileall --invalidation-mode=unchecked-hash /app"
+        "rm -rf /app/lib/libLLVM*",
+        "rm -rf /app/lib/libclang*",
+        "rm -rf /app/lib/python*/site-packages/PySide6/examples",
+        "rm -rf /app/share/bash-completion",
+        "rm -rf /app/share/doc",
+        "rm -rf /app/share/fish",
+        "rm -rf /app/share/man",
+        "rm -rf /app/share/zsh"
     ],
     "build-options": {
         "env": [

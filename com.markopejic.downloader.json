@@ -14,12 +14,18 @@
         "--device=dri",
         "--filesystem=xdg-download"
     ],
-    "cleanup" : [
-        "/man",
-        "*.a"
-    ],
     "cleanup-commands": [
-        "/app/cleanup-BaseApp.sh"
+        "/app/cleanup-BaseApp.sh",
+        "rm -rf /app/lib/libLLVM*",
+        "rm -rf /app/lib/libclang*",
+        "rm -rf /app/lib/python*/site-packages/OpenGL",
+        "rm -rf /app/lib/python*/site-packages/PySide6/examples",
+        "rm -rf /app/lib/python*/site-packages/pyside6_examples-*",
+        "rm -rf /app/share/bash-completion",
+        "rm -rf /app/share/doc",
+        "rm -rf /app/share/fish",
+        "rm -rf /app/share/man",
+        "rm -rf /app/share/zsh"
     ],
     "build-options": {
         "env": [
@@ -29,64 +35,14 @@
     },
     "modules": [
         "python3-yt-dlp.json",
-        {
-            "name": "ffmpeg",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mv bin/ffmpeg bin/ffprobe $FLATPAK_DEST/bin/"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-03-18-16-51/ffmpeg-N-123552-gb50cbdc04f-linux64-gpl.tar.xz",
-                    "sha256": "572d6189d6901d2bf5103e69049ec0725266ad21ad2a96087bd9c265991b11ec",
-                    "only-arches": [
-                        "x86_64"
-                    ]
-                },
-                {
-                    "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-03-18-16-51/ffmpeg-N-123552-gb50cbdc04f-linuxarm64-gpl.tar.xz",
-                    "sha256": "ebc8e95ca3bd6e3c7a5ca7ea78127032079990eb0185e6b4f90f8e7fb94bc9bd",
-                    "only-arches": [
-                        "aarch64"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "deno",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mv * $FLATPAK_DEST/bin/"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.7.6/deno-x86_64-unknown-linux-gnu.zip",
-                    "sha256": "f930789c59335e374ebe28671f3b426c2e40e5328de0edab7002185f81fdf857",
-                    "only-arches": [
-                        "x86_64"
-                    ]
-                },
-                {
-                    "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.7.6/deno-aarch64-unknown-linux-gnu.zip",
-                    "sha256": "abf6b16e8fbd8aa3907bc9d56630a53a256feb31c2dafa80a92129da17308b81",
-                    "only-arches": [
-                        "aarch64"
-                    ]
-                }
-            ]
-        },
-        {
+         {
             "name": "com.markopejic.downloader",
             "buildsystem": "simple",
             "build-commands": [
-                "install -D resources/linux/com.markopejic.downloader.desktop $FLATPAK_DEST/share/applications/com.markopejic.downloader.desktop",
-                "install -D resources/linux/com.markopejic.downloader.metainfo.xml $FLATPAK_DEST/share/metainfo/com.markopejic.downloader.metainfo.xml",
-                "install -D resources/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.markopejic.downloader.svg",
-                "install -D resources/icon.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/com.markopejic.downloader.png",
+                "install -Dm644 resources/linux/${FLATPAK_ID}.desktop -t $FLATPAK_DEST/share/applications/",
+                "install -Dm644 resources/linux/${FLATPAK_ID}.metainfo.xml -t $FLATPAK_DEST/share/metainfo/",
+                "install -Dm644 resources/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+                "install -Dm644 resources/icon.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png",
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --compile . --no-build-isolation"
             ],
             "sources": [

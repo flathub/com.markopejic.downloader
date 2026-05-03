@@ -68,7 +68,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/markop404/media-downloader/",
-                    "tag": "v5.0.2"
+                    "commit": "c6b66dce1c501e32b88fd32d86fd68f48ca4b607"
                 }
             ]
         }

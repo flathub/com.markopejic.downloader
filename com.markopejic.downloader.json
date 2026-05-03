@@ -14,12 +14,18 @@
         "--device=dri",
         "--filesystem=xdg-download"
     ],
-    "cleanup" : [
-        "/man",
-        "*.a"
-    ],
     "cleanup-commands": [
-        "/app/cleanup-BaseApp.sh"
+        "/app/cleanup-BaseApp.sh",
+        "rm -rf /app/lib/libLLVM*",
+        "rm -rf /app/lib/libclang*",
+        "rm -rf /app/lib/python*/site-packages/OpenGL",
+        "rm -rf /app/lib/python*/site-packages/PySide6/examples",
+        "rm -rf /app/lib/python*/site-packages/pyside6_examples-*",
+        "rm -rf /app/share/bash-completion",
+        "rm -rf /app/share/doc",
+        "rm -rf /app/share/fish",
+        "rm -rf /app/share/man",
+        "rm -rf /app/share/zsh"
     ],
     "build-options": {
         "env": [
@@ -29,32 +35,7 @@
     },
     "modules": [
         "python3-yt-dlp.json",
-        {
-            "name": "ffmpeg",
-            "buildsystem": "simple",
-            "build-commands": [
-                "mv bin/ffmpeg bin/ffprobe $FLATPAK_DEST/bin/"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-03-18-16-51/ffmpeg-N-123552-gb50cbdc04f-linux64-gpl.tar.xz",
-                    "sha256": "572d6189d6901d2bf5103e69049ec0725266ad21ad2a96087bd9c265991b11ec",
-                    "only-arches": [
-                        "x86_64"
-                    ]
-                },
-                {
-                    "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-03-18-16-51/ffmpeg-N-123552-gb50cbdc04f-linuxarm64-gpl.tar.xz",
-                    "sha256": "ebc8e95ca3bd6e3c7a5ca7ea78127032079990eb0185e6b4f90f8e7fb94bc9bd",
-                    "only-arches": [
-                        "aarch64"
-                    ]
-                }
-            ]
-        },
-        {
+       {
             "name": "deno",
             "buildsystem": "simple",
             "build-commands": [

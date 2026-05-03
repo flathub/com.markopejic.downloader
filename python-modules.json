@@ -7,9 +7,15 @@
             "name": "python3-yt-dlp",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"yt-dlp[deno,default,curl-cffi]==2026.3.17\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"yt-dlp[deno,default,curl-cffi]==2026.3.17 hatchling\" --no-build-isolation",
+                "pip3 uninstall --prefix=${FLATPAK_DEST} hatchling"
             ],
             "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/d3/8a/44032265776062a89171285ede55a0bdaadc8ac00f27f0512a71a9e3e1c8/hatchling-1.29.0-py3-none-any.whl",
+                    "sha256": "50af9343281f34785fab12da82e445ed987a6efb34fd8c2fc0f6e6630dbcc1b0"
+                },
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/f7/16/c92ca344d646e71a43b8bb353f0a6490d7f6e06210f8554c8f874e454285/brotli-1.2.0.tar.gz",

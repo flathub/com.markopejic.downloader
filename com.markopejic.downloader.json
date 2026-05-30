@@ -28,26 +28,26 @@
         ]
     },
     "modules": [
-        "python3-yt-dlp.json",
+        "python-modules.json",
         {
             "name": "ffmpeg",
             "buildsystem": "simple",
             "build-commands": [
-                "mv bin/ffmpeg bin/ffprobe $FLATPAK_DEST/bin/"
+                "install -Dm755 bin/ffmpeg bin/ffprobe /app/bin/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-05-25-16-31/ffmpeg-N-124634-g69bdb05f36-linux64-gpl.tar.xz",
-                    "sha256": "5f1dba6de8e166a0b25e421dbf19248fa9711a276fa3de6dc5968c71c1580c80",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-05-30-15-19/ffmpeg-N-124683-g3023060139-linux64-gpl.tar.xz",
+                    "sha256": "c89e986a72674f00fdc618bdd6d24ddf736227ca061706b1f508625347b6f4e0",
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-05-25-16-31/ffmpeg-N-124634-g69bdb05f36-linuxarm64-gpl.tar.xz",
-                    "sha256": "d272dd8f67b3d37b4cd01fa6350a9fd00bd9ca7b2fb7cda3afd9fc4a22eaa6b2",
+                    "url": "https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2026-05-30-15-19/ffmpeg-N-124683-g3023060139-linuxarm64-gpl.tar.xz",
+                    "sha256": "94b37bb797a3649cbcb29cefa2c1bc0ed85ab0eeae33643905205d76314f0a53",
                     "only-arches": [
                         "aarch64"
                     ]
@@ -55,24 +55,26 @@
             ]
         },
         {
-            "name": "deno",
+            "name": "curl-impersonate",
             "buildsystem": "simple",
             "build-commands": [
-                "mv * $FLATPAK_DEST/bin/"
+                "install -Dm755 curl* /app/bin/"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.8.0/deno-x86_64-unknown-linux-gnu.zip",
-                    "sha256": "be2c8b53c8ca1d66be76feb9b1a524419da708b00d4ca074cf5c633c81c1627b",
+                    "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.5.6/curl-impersonate-v1.5.6.x86_64-linux-gnu.tar.gz",
+                    "sha256": "b60344f63b9ed8806f0e9f7fd357d9f6c9a82aca279ed1e9e257d544885dcbde",
+                    "strip-components": 0,
                     "only-arches": [
                         "x86_64"
                     ]
                 },
                 {
                     "type": "archive",
-                    "url": "https://github.com/denoland/deno/releases/download/v2.8.0/deno-aarch64-unknown-linux-gnu.zip",
-                    "sha256": "933a6a7d2985957271cd2085a5a5a1832398aa221a354daab5635196cf2cbbae",
+                    "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.5.6/curl-impersonate-v1.5.6.aarch64-linux-gnu.tar.gz",
+                    "sha256": "6766bc67fd3e8e2313875f32b36b5a3fab02beffe77e5f1cf7fc5da99731d403",
+                    "strip-components": 0,
                     "only-arches": [
                         "aarch64"
                     ]
@@ -83,17 +85,17 @@
             "name": "com.markopejic.downloader",
             "buildsystem": "simple",
             "build-commands": [
-                "install -D resources/linux/com.markopejic.downloader.desktop $FLATPAK_DEST/share/applications/com.markopejic.downloader.desktop",
-                "install -D resources/linux/com.markopejic.downloader.metainfo.xml $FLATPAK_DEST/share/metainfo/com.markopejic.downloader.metainfo.xml",
-                "install -D resources/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.markopejic.downloader.svg",
-                "install -D resources/icon.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/com.markopejic.downloader.png",
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --compile . --no-build-isolation"
+                "install -Dm644 resources/linux/com.markopejic.downloader.desktop $FLATPAK_DEST/share/applications/com.markopejic.downloader.desktop",
+                "install -Dm644 resources/linux/com.markopejic.downloader.metainfo.xml $FLATPAK_DEST/share/metainfo/com.markopejic.downloader.metainfo.xml",
+                "install -Dm644 resources/icon.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/com.markopejic.downloader.svg",
+                "install -Dm644 resources/icon.png $FLATPAK_DEST/share/icons/hicolor/512x512/apps/com.markopejic.downloader.png",
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} . --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/markop404/media-downloader/",
-                    "commit": "334b696bb5951ee29da677511efeef01b017934e"
+                    "commit": "9909315abfc4df5259f4bac6bf49081fe63e6ddc"
                 }
             ]
         }
